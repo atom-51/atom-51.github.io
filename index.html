@@ -1,127 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="The personal website of Shresth Agrawal"
+    />​
+    <link rel="icon" type="image/png" href="logo.png"/>
+    <img src="logo.png" alt="Logo" style="width:150px;height:150px;" class="center" >
+    <title>Atom51</title>
 
-<head>
-  <title>
-    Atom51: Roadmap towards a Protein Programming Language
-  </title>
-  <style>
-    body {
-      font-family: 'Lucida Console', monospace
-    }
-  </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>​
+  <body>
+    <div id="preamble">
 
-<body>
-  <h1>Atom51 - Roadmap</h1>
-  <hr>
+      <h1 class="title">Atom51</h1>
 
-  <h3>Introduction</h3>
-  <p>Most of the therapeutics available today consist of small-molecule-based drugs. These drugs primarily
-    function by binding to specific pockets on target molecules, often proteins, either stimulating or inhibiting their
-    activity. While small-molecule drugs are relatively easy to understand, develop, and administer, they have
-    limitations in terms of complexity and functionality. Moreover, they face challenges when it comes to targeting
-    &quot;undruggable targets&quot; &ndash; targets that have historically been identified as lacking well-defined
-    binding pockets.</p>
+      <h1 class="subtitle">
+        <a href="https://github.com/atom-51">github</a> or
+        <a href="mailto:hello@atom51.com">email</a>
+      </h1>​
+    </div>
+    <div id = "intro">
+        <p><b>
+            Hello! 👋
+        </p></b>
 
-  <p>This assertion is further reinforced by EROOM's law, which stands as the inverse of Moore's law and highlights the
-    declining productivity of the pharmaceutical industry. As the easily druggable targets have already been addressed,
-    we are now confronted with the more challenging &quot;undruggable targets.&quot; Developing a new drug for these
-    targets currently requires over $2.5 billion and more than 10 years of intensive research and development. </p>
+        <ul>
+        <li>
+            We're interested in building the most advanced toolkit to design protein therapeutics.  
+        </li>
+        <li>
+            Our conviction lies in harnessing the power to bend proteins at will. We strongly believe that proteins (Ammino Acids more specifically) are the bits of biology and that we can design orders of magnitude better therapeutics than we can today. 
+        </li>
+        <li> 
+            If we have substantially better insight into proteins, we believe that these major problems with protein therapeutics are solvable:
+        </li>
+        <ol>
+            <li>
+                Protein penetration into the cell.
+            </li>
+            <li>
+                Adverse Immune Response.
+            </li>
+            <li>
+                Protein Degradation, etc.
+            </li>
+        </ol>  
+        <li>
+            Biology has had a way of bypassing all these problems for millennia. Small molecules, while powerful simply lack the sophistication for better medicine. We must try to leave them behind.    
+        </li>
+        </ul>
+    </div>
+​
+    <hr>
+​
+    <div id = "bio">
+        <div id = "innovation">
+            <h2>What are we doing differently?</h2>
+            <div>
+​
+                <p>
+                
+                    There's substantial work being done in the computational protein space since 2021. We are starting from first principles to build towards our vision. 
+                    We might independently arrive at conclusions drawn already by other teams - we consider that a strong positive reinforcement rather than a negative data point. 
+                    We need to figure out a few key components:
+                </p>
+                    
+                    <ul>
+                        <li>
+                            <b>📯One representation learning method to rule them all 🗡:</b> 
+                            The current SOTA methods still can't produce inclusive protein representations that can incorporate all facets of proteins from sequence, structure, temporal dynamics, post-translational modifications, single point mutations, additional bound ligands/substrates, protein complexes, etc. into one representation learning scheme. 
+                            This limits us to only extrapolate knowledge from one or a limited set of domains. 
+                            We are investigating if Joint Embedding Architecture (popularized by Yann Lecun) is the way forward. 
+                            Our first experiment is to simply integrate sequence and structure (since it's quite standardized at this point). 
+                            Our work: <a href="https://github.com/atom-51/jespr">https://github.com/atom-51/jespr</a>.
+                        </li>
+                        <li>
+                            <b>One pre-training objecting to bring them all 🤝: </b> 
+                            We need to find the pre-training objective for protein learning which is as powerful as 'next word prediction' for language. 
+                            Our bet currently is on contrastive loss for protein representations in different modalities. 
+                            This also ties into our first point on how to learn more inclusive representations.
+                        </li>
+                        <li>
+                            <b>And in the light🔥, one protein-landscape mapping to bind them⛓️: </b> 
+                            Target discovery is absolutely crucial. 
+                            We can now almost reliably sequence and predict 3-D structures of all proteins. 
+                            By adding a few key pieces such as information for spacial transcriptomics → proteomics to extrapolate cellular localization and interaction prediction, we should start accurately mapping the Gene Ontology landscape. 
+                            We're still exploring how best to approach this problem.
+                        </li>
+                   
+                    </ul>
+            </div>
+        </div>
 
-  <img src="src/erooms_law.png" alt="Italian Trulli">
-  <p>(Image Taken from: https://www.benchling.com/blog/will-the-2020s-be-the-decade-of-life-science)</p>
+        <hr>
+​
+        <div id = "company-type">
+            <h2>Are we funded or incorporated?</h2>
+            <div>
+                <ul>
+                    <li>
+                        We are currently neither funded nor incorporated and have bootstrapped ourselves. 
+                        We are still figuring out the best path forward and till then we'll work off non-dilutive grants and open-source our work. 
+                        We are also supported by our university's (Imperial College London) compute resources (no IP boundation).
+                    </li>
+                    <li>
+                        We are currently not looking to raise equity-based investments and will continue developing through grants.
+                        Our goal is to build fast without distraction. 
+                    </li>
+                    <li>    
+                        Contrary to popular belief, capital (except for compute) is not yet a bottleneck, and neither is human capital.  
+                        If you have any GPU compute cluster we can ssh into (anything better than 4xRTX-6000s), we'd wish for god 👼 to bless your soul 🙌. 
+                        You can also support us by reviewing our work and letting us know what you think.
+                    </li>
+                    <li>
+                        Our belief in protein therapeutics + deep learning is unwavering. 
+                        We believe these problems are solvable.
+                    </li>
+                    <li>
+                        We're a <i>team of three:</i> <a href="https://www.linkedin.com/in/harshag1312/">harsh</a>, <a href="https://www.linkedin.com/in/aditya-tandon-029s029/">aditya</a>, and <a href="https://www.linkedin.com/in/digvijaysingh1707/">digvijay</a>
 
-  <hr>
-  <h3> Shift from Small Molecule Drugs </h3>
-  <p> The fundamental challenge lies in our attempt to address intricate disease biology
-    using relatively unsophisticated solutions, namely small molecule therapeutics. To illustrate this point through
-    analogy, it's akin to building complex software using a basic calculator. While software development ultimately
-    relies on sequential and combinatorial mathematical calculations that can be performed on a calculator, the
-    calculator itself lacks the capacity to handle such advanced logic. In the realm of computing, we have evolved to
-    develop generalized compute units like CPUs that are capable of executing complex logic.</p>
-
-  <p>Similarly, we need to transcend the limitations of primitive calculators, in this case, small molecule
-    therapeutics, and instead focus on designing generalized biological compute units that can execute sophisticated
-    logic. Fortunately, we have at our disposal highly capable bio-compute units known as proteins, which carry out a
-    vast array of advanced tasks within our cells. Proteins possess the remarkable ability to intricately fold into
-    specialized 3D structures and dynamically undergo conformational changes to perform highly complex functions. These
-    tasks include precise DNA splicing, acting as ultra-specific binders (such as antibodies), transporting compounds
-    within and outside cells, and participating in intricate signal transduction processes.</p>
-
-  <p>An important advantage of proteins is that they are composed of linear chains of 21 amino acids, and the specific
-    sequence of these amino acids determines the protein's final structure and function. Furthermore, proteins naturally
-    degrade into non-toxic amino acids, mitigating concerns regarding potential toxicity often associated with small
-    molecule drugs.</p>
-
-  <p>While protein therapeutics are gaining popularity, they have not yet fully replaced small molecule drugs. Several
-    factors contribute to this: Complexity: Proteins exhibit a high degree of complexity, making their modeling and
-    manipulation challenging. Cost of production: Producing protein therapeutics is generally more expensive compared to
-    small molecule drugs due to the complexities involved in their synthesis and purification. Immunogenicity: Protein
-    therapeutics have the potential to elicit immune responses in patients, which can result in adverse effects and
-    limit their efficacy.</p>
-
-  <hr>
-  <h3>How can we create a better class of Protein Therapeutics?</h3>
-  <p> The aforementioned challenges associated with protein
-    therapeutics can largely be attributed to the difficulty in accurately modeling the intricate complexity of protein
-    structure and function. However, there is now a growing belief that we have reached a crucial turning point, thanks
-    to the advancements in machine learning algorithms that have attained the necessary power to capture these
-    underlying complexities effectively.</p>
-
-  <p>In order to develop innovative protein therapeutics, it is essential to establish a robust and interchangeable
-    understanding of the relationships between protein sequences, structures, and functions, with a primary focus on the
-    former. The groundbreaking achievement of Alphafold2 showcased the remarkable accuracy with which a full 3D protein
-    structure can be predicted solely from its protein sequence. However, we still lack an equivalently robust model
-    that can accurately translate a given protein structure back into its corresponding protein sequence&mdash;an
-    intriguing challenge known as the inverse folding problem.</p>
-
-  <p> The resolution of this inverse folding problem holds tremendous potential in revolutionizing the design and
-    engineering of protein therapeutics. By successfully bridging the gap between protein structures and sequences, we
-    can unlock the ability to precisely engineer proteins with desired properties and functions, paving the way for a
-    new era of highly effective and tailored protein-based treatments.</p>
-
-  <hr>
-  <h3>Our unique approach to solving Inverse Folding</h3>
-
-  <p>Large Language Models (LLMs) appear as an enticing solution to tackle the inverse-folding problem in proteins.
-    Proteins, being linear chains, can be represented as a language with 21 characters, making LLMs a potential
-    candidate for modeling peptide language. However, achieving accurate modeling in this domain requires LLMs to
-    possess a deep understanding of the underlying biochemistry of these complex molecular machines, beyond their
-    proficiency in natural language tasks. Current auto-regressive LLMs, as acknowledged by Dr. Yann Lecun, Chief AI
-    Scientist at Meta, lack the reasoning capabilities and world models necessary for accurate modeling.</p>
-
-  <p>We are actively working on actualizing this vision: JESPR (Joint Embedding Pre-training for Protein
-    Structure-Sequence Representations). JESPR aims to learn universal protein representations by generating embeddings
-    that closely resemble each other for both protein sequence and structure.</p>
-
-  <p>Another crucial objective is the incorporation of a latent variable in structural modeling. Latent variables enable
-    the modeling of multiple output representations from a single input. Since different protein sequences can fold into
-    the same structure, incorporating variability in generating outputs from a single input is essential for solving the
-    inverse-folding problem. The success of GPT models is attributed, in part, to their strong pre-training objectives.
-    For protein models, we believe that generating joint embeddings rather than relying solely on auto-regressive
-    modeling serves as the optimal pre-training objective.</p>
-
-  <p>The primary pre-training task for JESPR involves a corpus of 200,000 experimentally validated structures from the
-    protein data bank. Once successful, JESPR, either as a standalone model or in conjunction with AlphaFold, can
-    establish a robust bidirectional pipeline between protein structure and sequence.</p>
-
-  <p>Furthermore, JESPR has the potential for repurposing in drug-target modeling. By providing the structural input of
-    the target protein, JESPR can generate a sequence that would fold into a drug capable of binding to the target
-    protein, expanding its applications beyond inverse folding.</p>
-
-  <hr>
-  <h3>The Endgame </h3>
-  <p>Modeling protein structure and sequence alone is not sufficient to fully unlock the potential of a
-    protein programming language. To achieve a comprehensive and functional protein programming language, two additional
-    aspects must be integrated: modeling protein function and dynamics.</p>
-
-  <p>Modeling protein function and dynamics has been historically challenging due to limited data availability.
-    World-model-based algorithms possess an advantage in generalizing with minimal data, and we speculate that during
-    the pre-training process of JESPR, the model may acquire enough common sense to extend its understanding of protein
-    function and dynamics.</p>
-
-  <p>Once this milestone is achieved, we will have the ability to express not only the structure of a target protein but
-    also any desired logic we wish the protein to execute. For instance, we could instruct the creation of a
-    functionally precise replica of DNA polymerase with an added telomerase function. Although this example may appear
-    trivial, we firmly believe that the advancements achieved through these systems will enable us to tackle the most
-    significant challenges in biology and medicine. One day this will cure cancer.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+​
+        
+    <hr>
+​
+    <div id="footer">
+        <p class = "footer"><i>This website was modified from
+            <a href="https://github.com/gakonst/gakonst.github.io"/>gakonst's personal website</a>
+            </i></p>
+      <br />
+  </body>
+</html>
